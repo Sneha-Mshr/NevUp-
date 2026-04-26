@@ -23,7 +23,7 @@ export default function Home() {
         <h1 className={styles.logo}>
           <span className={styles.logoIcon}>◈</span> NevUp
         </h1>
-        <p className={styles.subtitle}>Trading Psychology Coach</p>
+        <p className={styles.subtitle}>A Trading Psychology Coach</p>
       </header>
 
       <section className={styles.traderGrid} role="list" aria-label="Select a trader">
