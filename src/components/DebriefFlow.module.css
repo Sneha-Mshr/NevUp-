@@ -1,0 +1,171 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Progress */
+.progress {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.25rem;
+}
+.progressStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  flex: 1;
+}
+.progressDot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+.progressActive .progressDot {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+.progressLabel {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+.progressActive .progressLabel { color: var(--text-primary); }
+
+/* Step content */
+.stepContent {
+  min-height: 300px;
+  outline: none;
+}
+.stepTitle { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
+.stepDesc { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem; }
+.centered { text-align: center; }
+
+/* Trade replay */
+.tradeList { display: flex; flex-direction: column; gap: 0.5rem; }
+.tradeItem {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+}
+.tradeTop { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.3rem; }
+.tradeAsset { font-weight: 600; font-size: 0.9rem; }
+.tradeDir { font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 3px; font-weight: 600; }
+.long { background: rgba(34, 197, 94, 0.15); color: var(--success); }
+.short { background: rgba(239, 68, 68, 0.15); color: var(--danger); }
+.tradePnl { margin-left: auto; font-weight: 700; font-size: 0.9rem; }
+.pnlPos { color: var(--success); }
+.pnlNeg { color: var(--danger); }
+.tradeBottom { display: flex; gap: 1rem; font-size: 0.75rem; color: var(--text-muted); }
+.tradeRationale { font-size: 0.8rem; color: var(--text-secondary); font-style: italic; margin-top: 0.3rem; }
+
+/* Emotional tagging */
+.tagList { display: flex; flex-direction: column; gap: 0.75rem; }
+.tagItem {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+}
+.tagTradeInfo { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+.emotionBtns { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.emotionBtn {
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius);
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  transition: all 0.15s;
+}
+.emotionBtn:hover { border-color: var(--text-muted); }
+.emotionBtnActive { font-weight: 600; }
+
+/* Rating */
+.ratingGroup {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.ratingBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1rem;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  min-width: 70px;
+  transition: all 0.15s;
+}
+.ratingBtn:hover { border-color: var(--accent); }
+.ratingBtnActive { border-color: var(--accent); background: rgba(59, 130, 246, 0.1); }
+.ratingNum { font-size: 1.5rem; font-weight: 700; }
+.ratingBtnActive .ratingNum { color: var(--accent); }
+.ratingLabel { font-size: 0.65rem; color: var(--text-muted); }
+
+/* Takeaway */
+.takeawayInput {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+}
+.takeawayInput:focus { border-color: var(--accent); }
+.charCount { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.3rem; display: block; }
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.navBtn {
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+  transition: all 0.15s;
+}
+.navBtn:hover:not(:disabled) { background: var(--bg-card-hover); }
+.navBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+.navBtnPrimary { background: var(--accent); color: white; border-color: var(--accent); }
+.navBtnPrimary:hover:not(:disabled) { background: var(--accent-hover); }
+.stepIndicator { font-size: 0.8rem; color: var(--text-muted); }
+
+@media (max-width: 375px) {
+  .progress { gap: 0.1rem; }
+  .progressLabel { font-size: 0.55rem; }
+  .progressDot { width: 24px; height: 24px; font-size: 0.6rem; }
+  .ratingGroup { gap: 0.4rem; }
+  .ratingBtn { min-width: 55px; padding: 0.75rem 0.5rem; }
+  .emotionBtns { gap: 0.25rem; }
+  .emotionBtn { padding: 0.3rem 0.5rem; font-size: 0.7rem; }
+}

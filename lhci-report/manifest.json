@@ -1,0 +1,38 @@
+[
+  {
+    "url": "http://localhost:3000/",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\OITASH\\OneDrive\\Desktop\\NevUp\\lhci-report\\localhost--2026_04_26_19_17_09.report.html",
+    "jsonPath": "C:\\Users\\OITASH\\OneDrive\\Desktop\\NevUp\\lhci-report\\localhost--2026_04_26_19_17_09.report.json",
+    "summary": {
+      "performance": 0.84,
+      "accessibility": 0.94,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:3000/",
+    "isRepresentativeRun": false,
+    "htmlPath": "C:\\Users\\OITASH\\OneDrive\\Desktop\\NevUp\\lhci-report\\localhost--2026_04_26_19_17_50.report.html",
+    "jsonPath": "C:\\Users\\OITASH\\OneDrive\\Desktop\\NevUp\\lhci-report\\localhost--2026_04_26_19_17_50.report.json",
+    "summary": {
+      "performance": 0.95,
+      "accessibility": 0.94,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:3000/",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\OITASH\\OneDrive\\Desktop\\NevUp\\lhci-report\\localhost--2026_04_26_19_18_19.report.html",
+    "jsonPath": "C:\\Users\\OITASH\\OneDrive\\Desktop\\NevUp\\lhci-report\\localhost--2026_04_26_19_18_19.report.json",
+    "summary": {
+      "performance": 0.95,
+      "accessibility": 0.94,
+      "best-practices": 0.96,
+      "seo": 1
+    }
+  }
+]

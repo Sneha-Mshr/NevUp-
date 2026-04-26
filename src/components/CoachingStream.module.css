@@ -1,0 +1,71 @@
+.container {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.connecting { background: var(--warning); animation: pulse 1s infinite; }
+.streaming { background: var(--success); animation: pulse 1s infinite; }
+.done { background: var(--success); }
+.error { background: var(--danger); animation: pulse 1s infinite; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.statusText { font-size: 0.8rem; color: var(--text-secondary); }
+.messageArea {
+  padding: 1rem;
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.messageText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+.cursor {
+  display: inline-block;
+  animation: blink 0.8s infinite;
+  color: var(--accent);
+  margin-left: 2px;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.dots span {
+  animation: dotPulse 1.4s infinite;
+  margin: 0 2px;
+  font-size: 1.2rem;
+}
+.dots span:nth-child(2) { animation-delay: 0.2s; }
+.dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes dotPulse {
+  0%, 80%, 100% { opacity: 0.3; }
+  40% { opacity: 1; }
+}

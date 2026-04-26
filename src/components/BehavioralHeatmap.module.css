@@ -1,0 +1,31 @@
+.container { position: relative; }
+.scrollWrapper { overflow-x: auto; padding-bottom: 0.5rem; }
+.cell { opacity: 0.15; }
+.cellActive { cursor: pointer; transition: opacity 0.15s, stroke 0.15s; stroke: transparent; stroke-width: 1; }
+.cellActive:hover { stroke: var(--text-primary); }
+.monthLabel { fill: var(--text-muted); font-size: 10px; }
+.dayLabel { fill: var(--text-muted); font-size: 9px; dominant-baseline: central; }
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 0.75rem;
+  justify-content: flex-end;
+}
+.legendLabel { font-size: 0.7rem; color: var(--text-muted); }
+.legendCell { width: 12px; height: 12px; border-radius: 2px; }
+.tooltip {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  z-index: 100;
+  pointer-events: none;
+  box-shadow: var(--shadow);
+  color: var(--text-primary);
+}
+.tooltip strong { margin-bottom: 0.2rem; }

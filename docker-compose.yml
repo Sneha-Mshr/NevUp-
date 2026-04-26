@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  mock-api:
+    image: stoplight/prism:4
+    command: mock /tmp/nevup_openapi.yaml --host 0.0.0.0 --port 4010
+    volumes:
+      - ./data/nevup_openapi.yaml:/tmp/nevup_openapi.yaml:ro
+    ports:
+      - "4010:4010"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:4010"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://mock-api:4010
+    depends_on:
+      mock-api:
+        condition: service_healthy

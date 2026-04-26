@@ -1,0 +1,46 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.section {}
+.sectionTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+.pathologies { display: flex; flex-direction: column; gap: 0.5rem; }
+.pathologyItem {
+  background: var(--bg-primary);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+}
+.pathologyHeader { display: flex; justify-content: space-between; align-items: center; }
+.pathologyName {
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--warning);
+  font-size: 0.9rem;
+}
+.confidence { font-size: 0.75rem; color: var(--text-muted); }
+.evidenceRow { margin-top: 0.3rem; }
+.evidenceLabel { font-size: 0.75rem; color: var(--text-secondary); }
+.strengthList { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+.strengthItem { font-size: 0.85rem; color: var(--success); }
+.peakWindow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-primary);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+}
+.peakTime { font-weight: 600; font-size: 0.9rem; }
+.peakRate { color: var(--success); font-weight: 600; font-size: 0.9rem; }

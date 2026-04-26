@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.bar { height: 20px; }
+.wide { width: 60%; }
+.row { display: flex; gap: 1rem; }
+.card { height: 120px; flex: 1; }
+.block { height: 200px; }
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}

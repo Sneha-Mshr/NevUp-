@@ -1,0 +1,59 @@
+#!/usr/bin/env node
+/**
+ * Build seed.json from the CSV.
+ * Usage: node scripts/build-seed.js
+ * 
+ * If data/nevup_seed_dataset.csv exists, parses it.
+ * Otherwise generates minimal sample data for development.
+ */
+const fs = require("fs");
+const path = require("path");
+
+const csvPath = path.join(__dirname, "..", "data", "nevup_seed_dataset.csv");
+const outDir = path.join(__dirname, "..", "src", "data");
+const outPath = path.join(outDir, "seed.json");
+
+fs.mkdirSync(outDir, { recursive: true });
+
+if (fs.existsSync(csvPath)) {
+  const raw = fs.readFileSync(csvPath, "utf-8").trim();
+  const lines = raw.split("\n");
+  const headers = lines[0].split(",");
+  const trades = [];
+
+  for (let i = 1; i < lines.length; i++) {
+    const row = [];
+    let current = "";
+    let inQuotes = false;
+    for (const ch of lines[i]) {
+      if (ch === '"') { inQuotes = !inQuotes; continue; }
+      if (ch === "," && !inQuotes) { row.push(current); current = ""; continue; }
+      current += ch;
+    }
+    row.push(current);
+
+    const obj = {};
+    headers.forEach((h, idx) => {
+      const val = (row[idx] || "").trim();
+      if (["entryPrice", "exitPrice", "quantity", "pnl"].includes(h)) {
+        obj[h] = val ? parseFloat(val) : null;
+      } else if (h === "planAdherence") {
+        obj[h] = val ? parseInt(val, 10) : null;
+      } else if (h === "revengeFlag") {
+        obj[h] = val === "true";
+      } else {
+        obj[h] = val || null;
+      }
+    });
+    if (obj.pnl !== null && obj.pnl !== undefined) {
+      obj.outcome = obj.pnl >= 0 ? "win" : "loss";
+    }
+    trades.push(obj);
+  }
+
+  fs.writeFileSync(outPath, JSON.stringify(trades));
+  console.log(`Parsed ${trades.length} trades from CSV -> ${outPath}`);
+} else {
+  console.log("CSV not found, creating empty seed");
+  fs.writeFileSync(outPath, "[]");
+}
