@@ -1,7 +1,6 @@
 # NevUp — System of Engagement (Track 3)
 
 Deplyoed Link On Netify - https://legendary-cucurucho-0e0cfb.netlify.app/
-( Deplyoed on Netify and Vercel both )
 
 Post-session debrief and behavioral dashboard for the NevUp AI Trading Coach platform.
 
