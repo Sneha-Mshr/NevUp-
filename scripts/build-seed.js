@@ -54,6 +54,6 @@ if (fs.existsSync(csvPath)) {
   fs.writeFileSync(outPath, JSON.stringify(trades));
   console.log(`Parsed ${trades.length} trades from CSV -> ${outPath}`);
 } else {
-  console.log("CSV not found, creating empty seed");
+  console.log("CSV not found, initializing empty dataset");
   fs.writeFileSync(outPath, "[]");
 }
