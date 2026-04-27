@@ -70,3 +70,12 @@ Place `nevup_seed_dataset.csv` in `data/` and run:
 ```bash
 node scripts/build-seed.js
 ```
+---
+
+## Author
+
+**Sneha Mishra**
+B.Tech @ NIT Hamirpur | Full-Stack Developer | DSA Problem Solver
+
+🔗 GitHub: https://github.com/Sneha-Mshr
+
