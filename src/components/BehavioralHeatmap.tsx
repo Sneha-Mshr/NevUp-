@@ -104,7 +104,7 @@ export default function BehavioralHeatmap({ dailyMetrics, onClick }: Props) {
           width={svgWidth}
           height={svgHeight}
           role="img"
-          aria-label="Behavioral quality heatmap showing daily trade quality scores"
+          aria-label="Behavioral trading quality index heatmap"
         >
           {/* Month labels */}
           {monthLabels.map((ml, i) => (
